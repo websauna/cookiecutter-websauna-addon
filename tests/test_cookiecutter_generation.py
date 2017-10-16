@@ -80,9 +80,9 @@ def test_generation(cookies, context):
         pytest.fail(e)
     # Run tests
     try:
-        ls = sh.ls('{path}'.format(path=base_path))
+        ls = sh.ls('{path}/env/bin/'.format(path=base_path))
         cmd = 'pytest'
-        if 'env' in str(ls.stdout):
+        if 'pytest' in str(ls.stdout):
             cmd = './env/bin/pytest'
         proc = subprocess.Popen(
             [cmd],

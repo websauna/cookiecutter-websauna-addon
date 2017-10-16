@@ -20,12 +20,11 @@ if VIRTUALENV_AVAILABLE:
             shell=sys.platform.startswith('win'),
             cwd='.'
         )
-        print("the commandline is {}".format(proc.args))
         proc.wait()
     except subprocess.CalledProcessError:
         print('It was not possible to create the virtualenv. Maybe inside tox?')
     except FileNotFoundError as e:
-        print(subprocess.check_output(['ls']), str(e))
+        print(subprocess.check_output(['ls', './env/bin/']), str(e))
 
 
 msg = dedent("""
