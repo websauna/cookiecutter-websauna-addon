@@ -1,0 +1,19 @@
+{
+    "full_name": "Amazing Team",
+    "email": "team@mycompany.com",
+    "company": "Websauna",
+    "github_username": "websauna",
+    "project_name": "My Package",
+    "project_short_description": "A nice and short description.",
+    "tags": "python package websauna pyramid",
+    "repo_name": "websauna.package",
+    "namespace": "{{ cookiecutter.repo_name.split('.')[0] }}",
+    "package_name": "{{ cookiecutter.repo_name.split('.')[1] }}",
+    "release_date": "today",
+    "year": "2017",
+    "version": "1.0.0a1",
+    "authentication_random": "{% secret() %}",
+    "authomatic_random": "{% secret() %}",
+    "session_random": "{% secret() %}",
+    "_extensions": ["websauna.j2secret.SecretExtension"]
+}
