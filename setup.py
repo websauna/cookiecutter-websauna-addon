@@ -15,6 +15,10 @@ requires = [
     'websauna.j2secret',
 ]
 
+dev_requirements = [
+    'zest.releaser[recommended]'
+]
+
 test_requirements = [
     'binaryornot',
     'flake8',
@@ -54,6 +58,8 @@ setup(
     zip_safe=False,
     install_requires=requires,
     extras_require={
+        # Dependencies for preparing releases
+        'dev': dev_requirements,
         # Dependencies for running test suite
         'test': test_requirements,
     },
