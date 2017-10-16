@@ -16,8 +16,10 @@ requires = [
 ]
 
 test_requirements = [
+    'binaryornot',
     'flake8',
-    'pytest'
+    'pytest',
+    'sh',
 ]
 
 setup(
