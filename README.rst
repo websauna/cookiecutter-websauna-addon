@@ -1,6 +1,8 @@
+.. image:: https://raw.githubusercontent.com/websauna/cookiecutter-websauna-addon/master/logo/logo-150.png
+
 `Cookiecutter`_ template to create a `Websauna`_ Addon.
 
-.. |ci| image:: https://travis-ci.org/websauna/cookiecutter-websauna-addon.svg
+.. |ci| image:: https://img.shields.io/travis/websauna/cookiecutter-websauna-addon/master.svg?style=flat-square
     :target: https://travis-ci.org/websauna/cookiecutter-websauna-addon/
 
 .. |latest| image:: https://img.shields.io/pypi/v/cookiecutter-websauna-addon.svg
@@ -33,16 +35,16 @@ Usage
 
 To generate a new Websauna addon package first, install Cookiecutter and websauna.js2secret:
 
-.. code-block:: shell
+    .. code-block:: shell
 
-    $ pip install cookiecutter websauna.js2secret
+        $ pip install cookiecutter websauna.js2secret
 
 
 Now run it against this repo:
 
-.. code-block:: shell
+    .. code-block:: shell
 
-    $ cookiecutter gh:websauna/cookiecutter-websauna-addon
+        $ cookiecutter gh:websauna/cookiecutter-websauna-addon
 
 
 You'll be prompted for some values. Provide them, then a Websauna addon will be created for you.
@@ -51,24 +53,24 @@ You'll be prompted for some values. Provide them, then a Websauna addon will be 
 
 Answer the prompts with your own desired options. For example:
 
-.. code-block::
+    .. code-block::
 
-    full_name [Amazing Team]: Amazing Team
-    email [team@mycompany.com]: team@company.com
-    company [Websauna]: Company
-    github_username [websauna]: company
-    project_name [My Package]: Websauna News Addon
-    project_short_description [A nice and short description.]: News item model for Websauna
-    tags [python package websauna pyramid]: python package websauna pyramid
-    repo_name [websauna.package]: company.news
-    namespace [company]: company
-    package_name [news]: news
-    release_date [today]:
-    year [2017]:
-    version [1.0.0a1]:
-    authentication_random [82e7affc6b55e58dd962e74e37dedc19679c92b9]:
-    authomatic_random [22539423a5ceb1fe6f7c6cd1a3a1867315236f25]:
-    session_random [1261a92aa68dc52877d8d2606943a4fb69ca0879]:
+        full_name [Amazing Team]: Amazing Team
+        email [team@mycompany.com]: team@company.com
+        company [Websauna]: Company
+        github_username [websauna]: company
+        project_name [My Package]: Websauna News Addon
+        project_short_description [A nice and short description.]: News item model for Websauna
+        tags [python package websauna pyramid]: python package websauna pyramid
+        repo_name [websauna.package]: company.news
+        namespace [company]: company
+        package_name [news]: news
+        release_date [today]:
+        year [2017]:
+        version [1.0.0a1]:
+        authentication_random [82e7affc6b55e58dd962e74e37dedc19679c92b9]:
+        authomatic_random [22539423a5ceb1fe6f7c6cd1a3a1867315236f25]:
+        session_random [1261a92aa68dc52877d8d2606943a4fb69ca0879]:
 
 
 .. note:: We recommend you accept the values presented for authentication_random, authomatic_random, session_random
@@ -77,14 +79,15 @@ Answer the prompts with your own desired options. For example:
 
 After a while, the generation will be finished and the following message will be displayed:
 
-.. code-block::
+    .. code-block::
 
-    ===============================================================================
-    Websauna Addon.
-    Package company.news was generated.
-    Now, code it, create a git repository, push to your Github account.
-    Sorry for the convenience.
-    ===============================================================================
+        ===============================================================================
+        Websauna Addon.
+        Package company.news was generated.
+        Now, code it, create a git repository, push to your Github account.
+        Sorry for the convenience.
+        ===============================================================================
+
 
 Next Steps
 ==========
