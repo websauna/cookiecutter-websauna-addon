@@ -54,8 +54,8 @@ setup(
     zip_safe=False,
     install_requires=requires,
     extras_require={
-    # Dependencies for running test suite
-    'test': test_requirements,
+        # Dependencies for running test suite
+        'test': test_requirements,
     },
     entry_points="""""",
 )
