@@ -82,7 +82,7 @@ def test_generation(cookies, context):
     try:
         ls = sh.ls('{path}'.format(path=base_path))
         cmd = 'pytest'
-        if 'env' in ls.stdout:
+        if 'env' in str(ls.stdout):
             cmd = './env/bin/pytest'
         proc = subprocess.Popen(
             [cmd],
