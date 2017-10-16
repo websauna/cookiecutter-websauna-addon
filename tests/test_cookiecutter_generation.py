@@ -5,6 +5,8 @@ import os
 import pytest
 import re
 import sh
+import subprocess
+import sys
 
 
 PATTERN = '{{(\s?cookiecutter)[.](.*?)}}'
@@ -13,7 +15,7 @@ RE_OBJ = re.compile(PATTERN)
 
 @pytest.fixture
 def context():
-    """."""
+    """Cookiecutter context (variables) to be used."""
     return {
         'full_name': 'Websauna Team',
         'email': 'developers@websauna.org',
@@ -55,7 +57,7 @@ def check_paths(paths):
             assert match is None, msg.format(path)
 
 
-def test_default_configuration(cookies, context):
+def test_generation(cookies, context):
     """Generated project should replace all variables."""
     result = cookies.bake(extra_context=context)
     assert result.exception is None
@@ -66,25 +68,23 @@ def test_default_configuration(cookies, context):
     paths = build_files_list(str(result.project))
     assert paths
     check_paths(paths)
-
-
-def test_flake8_compliance(cookies):
-    """Generated project should pass flake8."""
-    result = cookies.bake()
     base_path = str(result.project)
-    paths = ['setup.py', 'src']
-    for path in paths:
-        try:
-            sh.flake8('{0}/{1}'.format(base_path, path))
-        except sh.ErrorReturnCode as e:
-            pytest.fail(e)
-
-
-def test_generated_package(cookies):
-    """Generated project should pass test execution."""
-    result = cookies.bake()
-    base_path = str(result.project)
+    # Run Flake 8
     try:
-        sh.pytest('{0}/tests'.format(base_path))
+        sh.flake8('{path}/setup.py {path}/{namespace}'.format(
+                path=base_path,
+                namespace=context['namespace']
+            )
+        )
     except sh.ErrorReturnCode as e:
+        pytest.fail(e)
+    # Run tests
+    try:
+        proc = subprocess.Popen(
+            ['./env/bin/pytest'],
+            shell=sys.platform.startswith('win'),
+            cwd=base_path
+        )
+        proc.wait()
+    except subprocess.CalledProcessError as e:
         pytest.fail(e)

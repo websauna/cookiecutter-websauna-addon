@@ -19,6 +19,7 @@ test_requirements = [
     'binaryornot',
     'flake8',
     'pytest',
+    'pytest-cookies',
     'sh',
 ]
 
