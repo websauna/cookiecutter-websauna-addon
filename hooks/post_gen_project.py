@@ -24,8 +24,8 @@ if VIRTUALENV_AVAILABLE:
         proc.wait()
     except subprocess.CalledProcessError:
         print('It was not possible to create the virtualenv. Maybe inside tox?')
-    except FileNotFoundError:
-        print(subprocess.check_output(['ls']))
+    except FileNotFoundError as e:
+        print(subprocess.check_output(['ls']), str(e))
 
 
 msg = dedent("""

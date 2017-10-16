@@ -80,11 +80,13 @@ def test_generation(cookies, context):
         pytest.fail(e)
     # Run tests
     try:
+        ls = sh.ls('{path}'.format(path=base_path))
         proc = subprocess.Popen(
             ['./env/bin/pytest'],
             shell=sys.platform.startswith('win'),
             cwd=base_path
         )
         proc.wait()
-    except subprocess.CalledProcessError as e:
+    except Exception as e:
+        print(ls.stdout)
         pytest.fail(e)
