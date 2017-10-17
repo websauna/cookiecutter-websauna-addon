@@ -22,6 +22,7 @@ if len(sys.argv) >= 2:
 
 
 requires = [
+    'prettyconf',
     'websauna',
 ]
 
