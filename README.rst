@@ -33,11 +33,11 @@ Features
 Usage
 =====
 
-To generate a new Websauna addon package first, install Cookiecutter and websauna.js2secret:
+To generate a new Websauna addon package first, install Cookiecutter and websauna.j2secret:
 
     .. code-block:: shell
 
-        $ pip install cookiecutter websauna.js2secret
+        $ pip install cookiecutter websauna.j2secret
 
 
 Now run it against this repo:
