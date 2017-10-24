@@ -9,8 +9,11 @@ import subprocess
 import sys
 
 
-PATTERN = '{{(\s?cookiecutter)[.](.*?)}}'
-RE_OBJ = re.compile(PATTERN)
+CC_PATTERN = '{{(\s?cookiecutter)[.](.*?)}}'
+RE_CC = re.compile(CC_PATTERN)
+
+SECRET_PATTERN = r'%(cookiecutter)[.](.*?)random%'
+RE_SECRET = re.compile(SECRET_PATTERN)
 
 
 @pytest.fixture
@@ -30,9 +33,7 @@ def context():
         'release_date': 'today',
         'year': '2017',
         'version': '1.0.0a1',
-        'authentication_random': '6c613c8193060d3738ca90103a6c79878150220b',
-        'authomatic_random': 'dc999820aa1e1b71b166039f7f3cc8cee61567e0',
-        'session_random': '42a8a98f766b8eba77a6326a579ecdf6d22b14b7',
+        'create_virtualenv': 'Yes'
     }
 
 
@@ -52,8 +53,12 @@ def check_paths(paths):
         if is_binary(path) or ('/env/' in path):
             continue
         for line in open(path, 'r'):
-            match = RE_OBJ.search(line)
+            match = RE_CC.search(line)
             msg = 'cookiecutter variable not replaced in {0}'
+            assert match is None, msg.format(path)
+
+            match = RE_SECRET.search(line)
+            msg = 'secret variable not replaced in {0}'
             assert match is None, msg.format(path)
 
 

@@ -12,8 +12,5 @@
     "release_date": "today",
     "year": "2017",
     "version": "1.0.0a1",
-    "authentication_random": "{% secret() %}",
-    "authomatic_random": "{% secret() %}",
-    "session_random": "{% secret() %}",
-    "_extensions": ["websauna.j2secret.SecretExtension"]
+    "create_virtualenv": ["Yes", "No"]
 }
