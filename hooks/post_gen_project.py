@@ -69,7 +69,7 @@ msg = dedent("""
     ===============================================================================
     Websauna Addon.
     Package {{ cookiecutter.repo_name }} was generated.
-    Now, code it, create a git repository, push to your Github account.
+    Now, code it, create a git repository, push to your GitHub account.
     Sorry for the convenience.
     ===============================================================================
 """)
