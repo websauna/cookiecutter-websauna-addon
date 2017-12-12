@@ -1,2 +1,2 @@
--e "git+https://github.com/websauna/websauna.git@master#egg=websauna[dev,celery,utils,notebook]"
+websauna[dev,celery,utils,notebook]==1.0a5
 -e ".[dev,test]"
