@@ -10,7 +10,7 @@
     "namespace": "{{ cookiecutter.repo_name.split('.')[0] }}",
     "package_name": "{{ cookiecutter.repo_name.split('.')[1] }}",
     "release_date": "today",
-    "year": "2017",
+    "year": "2018",
     "version": "1.0.0a1",
     "create_virtualenv": ["Yes", "No"]
 }

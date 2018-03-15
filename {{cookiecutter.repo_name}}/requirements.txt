@@ -1,2 +1,2 @@
-websauna[dev,celery,utils,notebook]==1.0a5
+websauna[dev,celery,utils,notebook]
 -e ".[dev,test]"
