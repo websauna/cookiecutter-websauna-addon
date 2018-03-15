@@ -57,7 +57,7 @@ Start the application:
 
     .. code-block:: shell
 
-        ws-pserve ws://{{ cookiecutter.namespace }}/{{ cookiecutter.package_name }}/conf/development.ini
+        pserve ws://{{ cookiecutter.namespace }}/{{ cookiecutter.package_name }}/conf/development.ini
 
 
 Running the test suite
