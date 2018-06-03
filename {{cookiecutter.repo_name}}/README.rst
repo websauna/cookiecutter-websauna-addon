@@ -3,7 +3,7 @@
 
 This is a Python package for {{ cookiecutter.repo_name }}, an addon for `Websauna framework <https://websauna.org>`_.
 
-To run this package you need Python 3.4+, PostgresSQL and Redis.
+To run this package you need Python 3.5.2+, PostgresSQL and Redis.
 
 
 Installation

@@ -28,7 +28,7 @@ Features
 * `Websauna`_: Support to the latest version.
 * Virtualenv automatically created and setup in development mode.
 * `Travis-CI`_: Ready for Travis Continuous Integration testing.
-* `Tox`_ testing: Setup to easily test for Python 3.4 and above.
+* `Tox`_ testing: Setup to easily test for Python 3.5 and above.
 
 Usage
 =====
