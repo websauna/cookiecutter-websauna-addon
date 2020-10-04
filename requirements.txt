@@ -1,0 +1,16 @@
+cookiecutter
+sh
+binaryornot
+
+# Code quality
+# ------------------------------------------------------------------------------
+flake8
+pycodestyle
+pyflakes
+
+# Testing
+# ------------------------------------------------------------------------------
+tox
+pytest
+pytest-cookies
+
